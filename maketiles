@@ -1,0 +1,45 @@
+#!/bin/bash
+
+terrainout="$1"
+terrain="$terrainout.in"
+tiledir="$terrainout.d"
+res=16
+
+msg() {
+	echo "$@"
+}
+
+splicetile() {
+	local i j file
+	i="$1"
+	j="$2"
+	tile="$3"
+	file="$(dirname "$tile").tmp/${i}x${j}.png"
+
+	msg "Resizing $tile to ${res}x${res} as $file"
+	convert "$tile" -resize "${res}x${res}>" "$file"
+
+	msg "Splicing $file into $terrainout"
+	x=$(($i - 1))
+	y=$(($j - 1))
+
+	# make the area we are overlaying into transparent
+	convert "$terrainout" "$file" -alpha Set -geometry "+$(( $x * 16 ))+$(( $y * 16 ))" -define compose:outside-overlay=false -compose Clear -composite "$terrainout"
+
+	composite -geometry "+$(( $x * 16 ))+$(( $y * 16 ))" "$file" "$terrainout" "$terrainout"
+}
+
+# copy source png to output png
+cp "$terrain" "$terrainout"
+
+mkdir "$tiledir.tmp"
+for i in {01..16}; do
+	for j in {01..16}; do
+		file="$tiledir/${i}x${j}"*.png
+		if [ -f $file ]; then
+			splicetile $i $j $file
+		fi
+	done
+done
+rm -r "$tiledir.tmp"
+

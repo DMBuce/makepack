@@ -29,9 +29,9 @@ Any image within this directory with filename +NNxMM*.png+ will be spliced into 
 'NN' and 'MM' must both be integers between 01 and 16, and must be zero-padded to two digits.
 
 As an example, a file called +pack/terrain.png.d/04x02-gravel.png+ will replace the texture in the 4th column, 2nd row
-(the position used for the gravel texture).
+(the position used for the gravel texture) of terrain.png.
 
-The +pack/gui/items.png.d/+ directory is used to create the items.png in that same manner that +pack/terrain.png.d/+ is used to create terrain.png.
+The +pack/gui/items.png.d/+ directory is used to create items.png in that same manner that +pack/terrain.png.d/+ is used to create terrain.png.
 
 All other texture placed within the +pack/+ directory structure will be copied into the texture pack.
 Once you are satisfied with the contents of your +pack/+ directory, you can create it with `make`.

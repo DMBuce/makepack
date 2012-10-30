@@ -31,18 +31,17 @@ has. This list is not exhaustive.
 **all**:
 	The default target. Creates the texture pack. Below are the detailed steps
 	that the 'all' target performs.
-+
-* Creates a skeleton +pack/+ directory
-* Extracts terrain.png and items.png into the +pack/+ directory
-* Copies and pastes files in +pack/terrain.png.d/+ into terrain.png
-** Files that are named +NNxMM*.png+ are pasted into row 'NN', column 'MM' of terrain.png
-** 'NN' and 'MM' must be two-digit, zero-padded numbers between 01 and 16
-* Copies and pastes files in +pack/gui/items.png.d/+ into items.png
-** Files that are named +NNxMM*.png+ are pasted into row 'NN', column 'MM' of items.png
-** 'NN' and 'MM' must be two-digit, zero-padded numbers between 01 and 16
-* Copies +pack/+ into a +PACKNAME+ directory
-* Removes extraneous files from +PACKNAME+
-* Creates the 'PACKNAME'.zip texture pack file
+	* Creates a skeleton +pack/+ directory
+	* Extracts terrain.png and items.png into the +pack/+ directory
+	* Copies and pastes files in +pack/terrain.png.d/+ into terrain.png
+	** Files that are named +NNxMM*.png+ are pasted into row 'NN', column 'MM' of terrain.png
+	** 'NN' and 'MM' must be two-digit, zero-padded numbers between 01 and 16
+	* Copies and pastes files in +pack/gui/items.png.d/+ into items.png
+	** Files that are named +NNxMM*.png+ are pasted into row 'NN', column 'MM' of items.png
+	** 'NN' and 'MM' must be two-digit, zero-padded numbers between 01 and 16
+	* Copies +pack/+ into a +PACKNAME+ directory
+	* Removes extraneous files from +PACKNAME+
+	* Creates the 'PACKNAME'.zip texture pack file
 +
 As a result of this process, any texture except for terrain.png and items.png
 that is copied into an appropriate subdirectory of +pack/+ will be included in

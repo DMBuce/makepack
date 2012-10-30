@@ -25,11 +25,11 @@ Change +PACKNAME+ at the top of the Makefile to whatever you want your texture p
 and run `make`. This will create a skeleton +pack/+ directory that is used to create your texture pack.
 
 The +pack/terrain.png.d/+ directory is used to create terrain.png.
-Any image within this directory with filename +'NN'x'MM'*.png+ will be spliced into the original minecraft terrain.png at index ('NN', 'MM').
+Any image within this directory with filename +'NN' x 'MM'*.png+ will be spliced into the original minecraft terrain.png at index ('NN', 'MM').
 'NN' and 'MM' must both be integers between 01 and 16, and must be zero-padded to two digits.
 
-As an example, a file called +pack/terrain.png.d/04x02-gravel.png+ will replace the texture in the 4th column, 2nd row.
-It just so happens that this position is used for the gravel texture.
+As an example, a file called +pack/terrain.png.d/04x02-gravel.png+ will replace the texture in the 4th column, 2nd row
+(the position used for the gravel texture).
 
 The +pack/gui/items.png.d/+ directory is used to create the items.png in that same manner that +pack/terrain.png.d/+ is used to create terrain.png.
 

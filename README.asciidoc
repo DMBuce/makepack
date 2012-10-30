@@ -22,20 +22,20 @@ Usage
 -----
 
 Change +PACKNAME+ at the top of the Makefile to whatever you want your texture pack to be called
-and run `make`. This will create a skeleton +pack+ directory that is used to create your texture pack.
+and run `make`. This will create a skeleton +pack/+ directory that is used to create your texture pack.
 
-The +pack/terrain.png.d+ directory is used to create terrain.png.
-Any image within this directory with filename 'NN'x'MM'*.png will be spliced into the original minecraft terrain.png at index 'NN', 'MM'.
+The +pack/terrain.png.d/+ directory is used to create terrain.png.
+Any image within this directory with filename +'NN'x'MM'*.png+ will be spliced into the original minecraft terrain.png at index ('NN', 'MM').
 'NN' and 'MM' must both be integers between 01 and 16, and must be zero-padded to two digits.
 
 As an example, a file called +pack/terrain.png.d/04x02-gravel.png+ will replace the texture in the 4th column, 2nd row.
 It just so happens that this position is used for the gravel texture.
 
-The +pack/gui/items.png.d+ directory is used to create the items.png in that same manner that +pack/terrain.png.d+ is used to create terrain.png.
+The +pack/gui/items.png.d/+ directory is used to create the items.png in that same manner that +pack/terrain.png.d/+ is used to create terrain.png.
 
-All other texture placed within the +pack+ directory structure will be copied into the texture pack.
-Once you are satisfied with the contents of your +pack+ directory, you can create it with `make`.
-This will create a .zip file of your texture pack, which can be installed by copying it into +~/.minecraft/texturepacks+ or by running `make install`.
+All other texture placed within the +pack/+ directory structure will be copied into the texture pack.
+Once you are satisfied with the contents of your +pack/+ directory, you can create it with `make`.
+This will create a .zip file of your texture pack, which can be installed by copying it into +~/.minecraft/texturepacks/+ or by running `make install`.
 
 /////
 vim: set syntax=asciidoc ts=4 sw=4 noet:

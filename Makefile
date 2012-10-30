@@ -55,3 +55,7 @@ clean:
 uninstall:
 	rm -rf $(MCDIR)/texturepacks/$(PACKNAME).zip
 
+example:
+	mkdir example
+	cd example && jar xvf $(MCJAR) && rm -rf *.class META-INF/ achievement/ com/ paulscode/ lang/ net/
+

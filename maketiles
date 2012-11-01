@@ -20,8 +20,8 @@ splicetile() {
 	convert "$tile" -resize "${res}x${res}>" "$file"
 
 	msg "Splicing $file into $terrainout"
-	x=$(($i - 1))
-	y=$(($j - 1))
+	x=$((${i#0} - 1))
+	y=$((${j#0} - 1))
 
 	# make the area we are overlaying into transparent
 	convert "$terrainout" "$file" -alpha Set -geometry "+$(( $x * 16 ))+$(( $y * 16 ))" -define compose:outside-overlay=false -compose Clear -composite "$terrainout"
